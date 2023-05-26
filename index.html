@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Preview Card Component</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        :root {
+            --dark-cyan: hsl(158, 36%, 37%);
+            --cream: hsl(30, 38%, 92%);
+            --very-dark-blue: hsl(212, 21%, 14%);
+            --dark-grayish-blue: hsl(228, 12%, 48%);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            margin: 1rem 0;
+        }
+
+        .all {
+            display: flex;
+            flex-direction: column;
+            width: 85vw;
+            margin: auto;
+        }
+
+        .part1 {
+            display: flex; 
+            width: inherit;
+        }
+
+        .product {
+            display: flex; /*must set to flex othewise will leave some space under the picture*/
+            width: inherit;
+        }
+
+        .product img {
+            width: inherit;
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
+
+        .part2 {
+            background-color: white ;
+            border-radius: 0 0 0.75rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preheading {
+            margin: 1rem; 
+            color: var(--dark-cyan);
+            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;            
+        }
+
+        .title {
+            margin: 0 1rem; 
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .description {
+            margin: 1rem;
+            color: var(--dark-grayish-blue);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5rem;
+        }
+
+        .cost-container {
+            margin: 1rem;
+            display: flex;
+        }
+
+        .cost {
+            color: var(--dark-cyan);
+            margin-right: 1rem;
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .actualprice {
+            color: var(--dark-grayish-blue);
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;   
+            text-decoration: line-through;
+        }
+
+        .cart-container { 
+            background-color: var(--dark-cyan);
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem 1.5rem 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .icon-cart {
+            width: 1rem;
+            margin-right: 1rem;
+        }
+
+        .text-cart {
+            color: white;
+            font-weight: bold;
+        }
+
+        .cart-container:hover {
+            background-color:  hsl(158, 36%, 30%);
+        }
+
+        @media screen and (min-width: 700px) {
+            body {
+                margin: 0;
+            }
+            
+            .all {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center; 
+                min-height: 100vh;
+            }
+
+            .part1,
+            .part2,
+            .product {
+                width: calc(280/16*1rem);
+            }
+
+            .part2 {
+                height: calc(420/16*1rem);
+                border-radius: 0 0.75rem 0.75rem 0;
+                justify-content: space-around;
+            }
+            .product img {
+                border-radius: 0.75rem 0 0 0.75rem;
+            }
+                
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="part1">
+            <picture class="product">
+                <source media="(min-width: 700px)" srcset="images/image-product-desktop.jpg">
+                <img src="images/image-product-mobile.jpg"> 
+            </picture>
+        </div>
+
+        <div class="part2">
+            
+            <div class="preheading">P E R F U M E</div>
+
+            <div class="title">Gabrielle Essence Eau De Parfum</div>
+
+            <div class="description">A floran, solar and voluptuous
+                interpretation composed by Olivier
+                Polge, Perfumer-Creator for the House of
+                CHANEL.
+            </div>
+        
+            <div class="cost-container">
+                <div class="cost">$149.99</div>
+                <div class="actualprice">$169.99</div>
+            </div>
+
+            <div class="cart-container">
+                <div><img class="icon-cart" src="images/icon-cart.svg"></div>
+                <div class="text-cart">Add to Cart</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
